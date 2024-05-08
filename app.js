@@ -1,4 +1,5 @@
 const display = document.getElementById('display');
+const equal = document.querySelector("#done");
 
 function appendToDisplay(value) {
   display.value += value;
@@ -20,10 +21,6 @@ function delLastChar() {
 
 function factorial() {
   const value = parseFloat(display.value);
-  if (isNaN(value) || value < 0 || !Number.isInteger(value)) {
-    alert('Invalid input for factorial');
-    return;
-  }
   const result = calculateFactorial(value);
   display.value = result;
 }
@@ -37,29 +34,25 @@ function calculateFactorial(n) {
 
 function squareRoot() {
   const value = parseFloat(display.value);
-  if (isNaN(value) || value < 0) {
-    alert('Invalid input for square root');
-    return;
-  }
   const result = Math.sqrt(value);
   display.value = result;
 }
 
 function logarithm() {
   const value = parseFloat(display.value);
-  if (isNaN(value) || value <= 0) {
-    alert('Invalid input for logarithm');
-    return;
-  }
   const result = Math.log(value);
   display.value = result;
 }
 
-function evaluate() {
+equal.addEventListener('click', () => {
   try {
+    console.log('display.value:', display.value);
     const result = eval(display.value);
     display.value = result;
   } catch (e) {
+    console.error('Error:', e);
     alert('Invalid expression');
   }
 }
+
+)

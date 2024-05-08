@@ -42,7 +42,6 @@ form .display {
   display: flex;
   justify-content: flex-end;
   margin: 20px 0;
-  background-color: red;
 }
 
 form .display input {
